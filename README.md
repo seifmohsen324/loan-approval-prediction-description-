@@ -1,4 +1,3 @@
-````md
 # 🏦 Loan Approval Prediction System
 
 A Machine Learning project that predicts whether a loan application will be approved based on applicant information. The project focuses on solving a **binary classification problem** while handling **missing values**, **categorical data**, and **imbalanced datasets**.
@@ -183,4 +182,3 @@ GitHub: https://github.com/seifmohsen324
 
 ---
 ⭐ If you found this project useful, consider giving it a star.
-````
