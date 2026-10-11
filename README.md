@@ -1,184 +1,38 @@
-# 🏦 Loan Approval Prediction System
+# Loan Approval Classification
 
-A Machine Learning project that predicts whether a loan application will be approved based on applicant information. The project focuses on solving a **binary classification problem** while handling **missing values**, **categorical data**, and **imbalanced datasets**.
+A notebook experiment that predicts a loan approval label from applicant and loan attributes in the included dataset. The workflow preprocesses mixed numerical and categorical data, addresses class imbalance with SMOTE, compares Logistic Regression and Decision Tree classifiers, and reports classification metrics and confusion matrices.
 
----
+## Project files
 
-## 📌 Project Overview
-
-Loan approval is a critical task in financial institutions. Manual evaluation can be time-consuming and prone to bias. This project uses Machine Learning techniques to automate loan approval prediction by analyzing applicant-related features and generating predictions.
-
-The project includes:
-
-- Data preprocessing
-- Missing value handling
-- Encoding categorical features
-- Handling class imbalance
-- Training classification models
-- Model evaluation using classification metrics
-
----
-
-## 🎯 Objectives
-
-- Predict whether a loan application will be approved or not
-- Build and compare classification models
-- Handle missing values effectively
-- Encode categorical variables
-- Address class imbalance issues
-- Evaluate model performance using appropriate metrics
-
----
-
-## 🧰 Technologies & Libraries
-
-<div align="left">
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
-
-</div>
-
----
-
-## 📂 Dataset
-
-Dataset used:
-
-**Loan Approval Prediction Dataset (Kaggle)**
-
-The dataset contains applicant information such as:
-
-- Gender
-- Marital Status
-- Education
-- Income
-- Loan Amount
-- Credit History
-- Employment Status
-- Property Area
-- Loan Term
-- Loan Approval Status
-
----
-
-## ⚙️ Project Workflow
-
-### 1. Data Collection
-- Load the dataset
-- Explore features and target variable
-
-### 2. Data Preprocessing
-- Handle missing values
-- Remove inconsistencies
-- Feature engineering (if needed)
-
-### 3. Encode Categorical Variables
-Examples:
-- Label Encoding
-- One-Hot Encoding
-
-### 4. Handle Imbalanced Data
-Techniques used:
-
-- SMOTE (Synthetic Minority Oversampling Technique)
-- Class balancing methods
-
----
-
-## 🤖 Models Used
-
-### Logistic Regression
-- Fast and interpretable
-- Works well for binary classification
-
-### Decision Tree
-- Handles non-linear relationships
-- Easy visualization and interpretation
-
-Comparison performed between both models.
-
----
-
-## 📊 Evaluation Metrics
-
-Since loan datasets can be imbalanced, accuracy alone is not enough.
-
-Metrics used:
-
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
-- Classification Report
-
----
-
-## 🔍 Covered Concepts
-
-- Binary Classification
-- Data Preprocessing
-- Missing Value Handling
-- Feature Encoding
-- Class Imbalance
-- SMOTE
-- Model Training
-- Model Evaluation
-
----
-
-## 🚀 How to Run
-
-Clone repository:
-
-```bash
-git clone https://github.com/yourusername/loan-approval-prediction.git
+```text
+.
+├── LV_2_Task_4.ipynb
+├── loan_approval_dataset.csv
+└── README.md
 ```
 
-Install dependencies:
+## Notebook workflow
+
+1. Load the loan dataset and inspect the target and features.
+2. Clean column values and encode the loan-status target.
+3. Split data into training and test sets.
+4. Use scikit-learn preprocessing pipelines with imputation, encoding, and scaling.
+5. Apply SMOTE to the training data and train Logistic Regression and Decision Tree classifiers.
+6. Compare model metrics, confusion matrices, and feature-importance output where supported by the estimator.
+
+The current notebook loads the CSV from `/content/loan_approval_dataset.csv`, which is a Google Colab-style path. For local use, change that cell to `pd.read_csv("loan_approval_dataset.csv")` and launch the notebook from the repository root.
+
+## Requirements
+
+Python and Jupyter are required. The notebook uses pandas, NumPy, scikit-learn, imbalanced-learn, and packaging.
 
 ```bash
-pip install -r requirements.txt
-```
-
-Run notebook:
-
-```bash
+pip install pandas numpy scikit-learn imbalanced-learn packaging jupyter
 jupyter notebook
 ```
 
-or run:
+Open `LV_2_Task_4.ipynb` and run the cells in order.
 
-```bash
-python main.py
-```
+## Responsible use
 
----
-
-## 📈 Future Improvements
-
-- Hyperparameter tuning
-- Try Random Forest and XGBoost
-- Build a web interface using Flask/Streamlit
-- Deploy the model
-- Improve performance with feature selection
-
----
-
-## 📸 Sample Pipeline
-
-Dataset → Cleaning → Encoding → Balancing → Training → Evaluation → Prediction
-
----
-
-## 👨‍💻 Author
-
-**Saif Fattah**
-
-Computer Engineering Student | AI & Machine Learning Enthusiast
-
-GitHub: https://github.com/seifmohsen324
-
----
-⭐ If you found this project useful, consider giving it a star.
+Loan approval is a consequential decision. This educational model can encode dataset bias and must not be used to make real lending decisions. Review data provenance, fairness, calibration, and applicable legal requirements before any real-world use.
